@@ -17,6 +17,16 @@ a {
     text-decoration: none;
 }
 a:hover {
-    opacity: .75;
+    opacity: .7;
+}
+.sticky-group {
+    top: 4.5em;
+    z-index: -1;
+}
+li {
+    list-style: none;
+}
+.cat:hover {
+    opacity: .5;
 }
 

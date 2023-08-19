@@ -8,5 +8,5 @@ function slideShow() {
     var next = current.next().length ? current.next() : current.parent().chindren(':first');
     current .removeClass('active');
     next.addClass('active');
-    setTimeout(slideShow, 1500);
+    setTimeout(slideShow, 150);
 }

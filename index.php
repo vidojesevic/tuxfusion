@@ -24,44 +24,50 @@
                         <a class="nav-link active text-light" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="#">Products</a>
+                        <a class="nav-link text-light" href="#products">Products</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="#">About</a>
+                        <a class="nav-link text-light" href="#about">About</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-light" href="#" tabindex="-1" aria-disabled="true">Cart</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light border rounded" href="#">Sing in</a>
                     </li>
                 </ul>
             </div>
         </nav>
 
-        <div id="carousel" class="carousel slide vh-50" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            </ol>
+        <div id="carousel" class="carousel slide vh-50" data-bs-ride="carousel">
+            <ul class="carousel-indicators">
+                <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
+                <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
+                <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
+            </ul>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="d-block w-100" src="public/images/laptop.png" alt="First slide">
+                    <img class="d-block w-100" src="public/images/laptop.png" alt="Laptop">
                     <div class="carousel-caption d-none d-md-block">
                         <h5>Laptop</h5>
                         <p>Laptop powered by AMD</p>
+                        <p><a class="btn btn-warning mt-3">Learn more</a></p>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="public/images/mini.png" alt="Second slide">
+                    <img class="d-block w-100" src="public/images/mini.png" alt="mini PC">
                     <div class="carousel-caption d-none d-md-block">
                         <h5>Mini PC</h5>
                         <p>Pini pc nesto</p>
+                        <p><a class="btn btn-warning mt-3">Learn more</a></p>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="public/images/desktop.png" alt="Third slide">
+                    <img class="d-block w-100" src="public/images/desktop.png" alt="decktop PC">
                     <div class="carousel-caption d-none d-md-block">
                         <h5>Laptop</h5>
-                        <p>Laptop powered by AMD</p>
+                        <p>Powerfull desktop PC</p>
+                        <p><a class="btn btn-warning mt-3">Learn more</a></p>
                     </div>
                 </div>
             </div>
@@ -75,20 +81,24 @@
                     <span class="sr-only">Next</span>
                 </a>
             </div>
+
         </div>
 
-        <br/><br/>
-        <div class="container">
+        <div class="container" id="products">
+            <br/><br/>
+            <br/><br/>
+            <h1 class="text-center">Empowering Your Digital World with <span class="text-success">SmartTux OS</span></h1>
+            <br/><br/>
             <div class="row">
                 <div id="categories" class="col-3 text-dark">
-                    <ul class="list-group">
+                    <ul class="list-group sticky-top sticky-group">
                         <br/>
                         <h3 class="list-group-item">Categories</h3>
-                        <li class="list-group-item mt-1"><a href="#" class="text-dark link-opacity-75">Laptops</a></li>
-                        <li class="list-group-item mt-1"><a href="#" class="text-dark link-opacity-75">Desktop PC</a></li>
-                        <li class="list-group-item mt-1"><a href="#" class="text-dark">Mini PC</a></li>
-                        <li class="list-group-item mt-1"><a href="#" class="text-dark">Tablets</a></li>
-                        <li class="list-group-item mt-1"><a href="#" class="text-dark">Smartphones</a></li>
+                        <li class="list-group-item mt-1 cat"><a href="#" class="text-dark">Laptops</a></li>
+                        <li class="list-group-item mt-1 cat"><a href="#" class="text-dark">Desktop PC</a></li>
+                        <li class="list-group-item mt-1 cat"><a href="#" class="text-dark">Mini PC</a></li>
+                        <li class="list-group-item mt-1 cat"><a href="#" class="text-dark">Tablets</a></li>
+                        <li class="list-group-item mt-1 cat"><a href="#" class="text-dark">Smartphones</a></li>
                     </ul>
                 </div>
                 <div class="container col-9">
@@ -149,11 +159,94 @@
                             </div>
                         </div>
                     </div>
+                    <div class="row mt-2">
+                        <div class="card col-sm mx-1">
+                            <img class="card-img-top pt-3" src="public/images/desktop.png" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">Buy</a>
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="card col-sm mx-1">
+                            <img class="card-img-top pt-3" src="public/images/laptop.png" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">Buy</a>
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="card col-sm mx-1">
+                            <img class="card-img-top pt-3" src="public/images/mini.png" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">Buy</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="card col-sm mx-1">
+                            <img class="card-img-top pt-3" src="public/images/desktop.png" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">Buy</a>
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="card col-sm mx-1">
+                            <img class="card-img-top pt-3" src="public/images/laptop.png" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">Buy</a>
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="card col-sm mx-1">
+                            <img class="card-img-top pt-3" src="public/images/mini.png" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">Buy</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+
+        <br/><br/>
+        <div id="about" class="bg-secondary text-light">
+        <br/><br/>
+            <div class="container">
+                <div class="row">
+                    <div class="col-6">
+                        <h2>About us</h2><br/>
+                        <p>TuxFusion Technologies is a leading tech company that 
+                            specializes in offering a diverse range of high-quality 
+                            computing devices powered by the innovative SmartTux OS.</p>
+                        <p> 
+                            By merging the expertise of Tuxedo Computers and System76, 
+                            TuxFusion brings you a seamless fusion of premium hardware 
+                            and a cutting-edge arch-based operating system. Our mission 
+                            is to provide users with the ultimate computing experience while supporting 
+                            open-source initiatives and fostering a vibrant Linux community.
+                        </p>
+                    </div>
+                    <div class="col-6">
+                        <img src="public/images/devs.png" alt="developers" class="img-fluid rounded">
+                    </div>
+                </div>
+            </div>
+        <br/><br/>
+        </div>
         <?php
         // phpinfo();
+        
 
         echo "<br/><br/><div class='container'><h1>Welcome to TuxFusion Technologies!</h1>";
         echo "eto nista</div>";
@@ -163,38 +256,39 @@
         <!-- Footer -->
         <footer class="text-center text-lg-start bg-light text-muted">
             <!-- Section: Social media -->
-            <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
-                <!-- Left -->
-                <!-- Left -->
-
-                <!-- Right -->
-                <div>
-                    <a href="" class="me-4 text-reset">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="" class="me-4 text-reset">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="" class="me-4 text-reset">
-                        <i class="fab fa-google"></i>
-                    </a>
-                    <a href="" class="me-4 text-reset">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="" class="me-4 text-reset">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="" class="me-4 text-reset">
-                        <i class="fab fa-github"></i>
-                    </a>
-                </div>
-                <!-- Right -->
-            </section>
+            <!-- <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"> -->
+            <!--     <!-- Left --> 
+            <!--     <!-- Left --> 
+            <!---->
+            <!--     <!-- Right --> 
+            <!--     <div> -->
+            <!--         <a href="" class="me-4 text-reset"> -->
+            <!--             <i class="fab fa-facebook-f"></i> -->
+            <!--         </a> -->
+            <!--         <a href="" class="me-4 text-reset"> -->
+            <!--             <i class="fab fa-twitter"></i> -->
+            <!--         </a> -->
+            <!--         <a href="" class="me-4 text-reset"> -->
+            <!--             <i class="fab fa-google"></i> -->
+            <!--         </a> -->
+            <!--         <a href="" class="me-4 text-reset"> -->
+            <!--             <i class="fab fa-instagram"></i> -->
+            <!--         </a> -->
+            <!--         <a href="" class="me-4 text-reset"> -->
+            <!--             <i class="fab fa-linkedin"></i> -->
+            <!--         </a> -->
+            <!--         <a href="" class="me-4 text-reset"> -->
+            <!--             <i class="fab fa-github"></i> -->
+            <!--         </a> -->
+            <!--     </div> -->
+            <!--     <!-- Right -->
+            <!-- </section> -->
             <!-- Section: Social media -->
 
             <!-- Section: Links  -->
             <section class="">
                 <div class="container text-center text-md-start mt-5">
+                    <hr/>
                     <!-- Grid row -->
                     <div class="row mt-3">
                         <!-- Grid column -->
@@ -209,24 +303,22 @@
                             </p>
                         </div>
                         <!-- Grid column -->
-
-                        <!-- Grid column -->
                         <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
                             <!-- Links -->
                             <h6 class="text-uppercase fw-bold mb-4">
                                 Products
                             </h6>
                             <p>
-                                <a href="#!" class="text-reset">Angular</a>
+                                <a href="#!" class="text-reset">Desktop</a>
                             </p>
                             <p>
-                                <a href="#!" class="text-reset">React</a>
+                                <a href="#!" class="text-reset">Laptop</a>
                             </p>
                             <p>
-                                <a href="#!" class="text-reset">Vue</a>
+                                <a href="#!" class="text-reset">Tablet</a>
                             </p>
                             <p>
-                                <a href="#!" class="text-reset">Laravel</a>
+                                <a href="#!" class="text-reset">Smartphone</a>
                             </p>
                         </div>
                         <!-- Grid column -->
