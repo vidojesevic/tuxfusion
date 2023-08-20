@@ -10,7 +10,7 @@
             <div class="carousel-caption d-none d-md-block">
                 <h5 class="text-warning">Laptop</h5>
                 <p class="text-warning">Laptop powered by AMD</p>
-                <p><a class="btn btn-warning mt-1">Learn more</a></p>
+                <p><a class="btn btn-warning mt-1" href="?page=product">Learn more</a></p>
             </div>
         </div>
         <div class="carousel-item">
@@ -18,7 +18,7 @@
             <div class="carousel-caption d-none d-md-block">
                 <h5 class="text-primary">Mini PC</h5>
                 <p class="text-primary">Pini pc nesto</p>
-                <p><a class="btn btn-primary mt-1">Learn more</a></p>
+                <p><a class="btn btn-primary mt-1" href="?page=product">Learn more</a></p>
             </div>
         </div>
         <div class="carousel-item">
@@ -26,7 +26,7 @@
             <div class="carousel-caption d-none d-md-block">
                 <h5 class="text-light">Laptop</h5>
                 <p class="text-light">Powerfull desktop PC</p>
-                <p><a class="btn btn-light mt-1">Learn more</a></p>
+                <p><a class="btn btn-light mt-1" href="?page=product">Learn more</a></p>
             </div>
         </div>
     </div>

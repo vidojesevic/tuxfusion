@@ -110,7 +110,7 @@
     <!-- Copyright -->
     <div class="text-center p-4 bg-dark">
         <span class="text-light">
-            &copy; 2021 Copyright:
+            &copy; 2023 Copyright:
         </span>
         <a class="text-light fw-bold" href="www.vsevic.com">www.vsevic.com</a>
     </div>

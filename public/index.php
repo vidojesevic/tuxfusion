@@ -1,17 +1,20 @@
 <?php 
 require_once('../config/config.php');
 
-require_once("../resources/views/layouts/header.php");
-require_once("../resources/views/layouts/navbar.php");
-require_once("../resources/views/layouts/carousel.php");
+require_once('../resources/views/layouts/header.php');
+require_once('../resources/views/layouts/navbar.php');
 
-if(!isset($_GET['route'])) {
-    require_once('../resources/views/products/products.php');
+if(!isset($_GET['route']) ?? 'home') {
+    include '../resources/views/layouts/carousel.php';
+    include '../resources/views/products/products.php';
 } else {
     switch ($_GET['route']) {
         case 'home':
             $controller = new HomeController();
             $controller->index();
+            break;
+        case 'product':
+            require_once('../resources/views/products/singleproduct.php');
             break;
         default:
         http_response_code(404);
