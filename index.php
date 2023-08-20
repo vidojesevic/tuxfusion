@@ -21,7 +21,7 @@
                 <a class="navbar-brand ms-0" href="#"><span class="text-success">Tux</span><span class="text-primary">Fusion </span>Technologies</a>
                 <ul class="nav ms-0">
                     <li class="nav-item">
-                        <a class="nav-link active text-light" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active text-light" aria-current="page" href="index.php">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-light" href="#products">Products</a>
@@ -49,25 +49,25 @@
                 <div class="carousel-item active">
                     <img class="d-block w-100" src="public/images/laptop.png" alt="Laptop">
                     <div class="carousel-caption d-none d-md-block">
-                        <h5>Laptop</h5>
-                        <p>Laptop powered by AMD</p>
-                        <p><a class="btn btn-warning mt-3">Learn more</a></p>
+                        <h5 class="text-warning">Laptop</h5>
+                        <p class="text-warning">Laptop powered by AMD</p>
+                        <p><a class="btn btn-warning mt-1">Learn more</a></p>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <img class="d-block w-100" src="public/images/mini.png" alt="mini PC">
                     <div class="carousel-caption d-none d-md-block">
-                        <h5>Mini PC</h5>
-                        <p>Pini pc nesto</p>
-                        <p><a class="btn btn-warning mt-3">Learn more</a></p>
+                        <h5 class="text-primary">Mini PC</h5>
+                        <p class="text-primary">Pini pc nesto</p>
+                        <p><a class="btn btn-primary mt-1">Learn more</a></p>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <img class="d-block w-100" src="public/images/desktop.png" alt="decktop PC">
                     <div class="carousel-caption d-none d-md-block">
-                        <h5>Laptop</h5>
-                        <p>Powerfull desktop PC</p>
-                        <p><a class="btn btn-warning mt-3">Learn more</a></p>
+                        <h5 class="text-light">Laptop</h5>
+                        <p class="text-light">Powerfull desktop PC</p>
+                        <p><a class="btn btn-light mt-1">Learn more</a></p>
                     </div>
                 </div>
             </div>
@@ -214,14 +214,16 @@
                                 <a href="#" class="btn btn-primary">Buy</a>
                             </div>
                         </div>
+                        <br/><br/>
                     </div>
                 </div>
             </div>
         </div>
 
-        <br/><br/>
+        <br/>
         <div id="about" class="bg-secondary text-light">
-        <br/><br/>
+            <br/><br/>
+            <br/>
             <div class="container">
                 <div class="row">
                     <div class="col-6">
@@ -241,12 +243,44 @@
                         <img src="public/images/devs.png" alt="developers" class="img-fluid rounded">
                     </div>
                 </div>
+                <br/><br/>
+                <div class="row">
+                    <div class="col-12">
+                        <h3>Celebrate Innovation with SmarTux OS: Where Cutting-Edge Meets Aesthetic Brilliance!</h3>
+                        <br/>
+                        <p class="text-light">
+                            "SmarTux OS, our innovative rolling distribution, offers
+                            users a cutting-edge Linux experience like no other. With a 
+                            focus on staying ahead in technology, SmarTux OS boasts a 
+                            robust and up-to-date kernel (currently at 6.4.10-arch) to 
+                            ensure that users benefit from the latest advancements 
+                            in performance and security. Our custom-patched DWM desktop 
+                            environment, sourced from the renowned suckless.org, 
+                            guarantees a sleek and efficient user interface, complemented 
+                            by a suite of suckless programs including the st terminal, 
+                            dmenu, slstatus, and the Surf web browser.
+                        </p>
+                        <p class="text-light">
+                            But SmarTux OS is not just about functionality; it's 
+                            a visual delight too. Our distribution features a stunning 
+                            collection of high-quality customized wallpapers to 
+                            personalize your desktop and create a visually pleasing 
+                            environment. Privacy and security are at the core of 
+                            SmarTux OS, making it suitable for users with varying 
+                            needs. Moreover, SmarTux OS is highly customizable, 
+                            and we encourage users to showcase their unique setups. 
+                            Join our community by sharing a screenshot of your 
+                            custom TuxFusion product on Reddit's r/tuxfusion, and 
+                            be part of the ever-evolving world of SmarTux OS."
+                        </p>
+                    </div>
+                </div>
+                <br/><br/>
             </div>
-        <br/><br/>
         </div>
         <?php
         // phpinfo();
-        
+
 
         echo "<br/><br/><div class='container'><h1>Welcome to TuxFusion Technologies!</h1>";
         echo "eto nista</div>";
