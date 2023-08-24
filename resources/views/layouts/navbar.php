@@ -12,7 +12,7 @@
                 <a class="nav-link text-light" href="#about">About</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-light" href="#cart" tabindex="-1" aria-disabled="true">Cart</a>
+                <a class="nav-link text-light" href="index.php?page=cart.php" tabindex="-1" aria-disabled="true">Cart</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-light border rounded" href="#">Sing in</a>
