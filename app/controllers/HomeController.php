@@ -1,19 +1,20 @@
 <?php
-include '../../config/conn.php';
 namespace App\Controllers;
+include '../../config/conn.php';
 
 class HomeController {
-    private $pdo;
 
-    // public function __construct(PDO $pdo)
-    // {
-    //     $this->pdo = $pdo;
-    // }
-
-    public function index() {
+    public function index(): void
+    {
         // $data = UserModel::getAllUsers();
-        require_once(__DIR__ . '../../resources/views/layouts/carousel.php');
-        require_once(__DIR__ . '../../resources/views/products/products.php');
+        // try {
+            include '../resources/views/layouts/navbar.php';
+            include '../resources/views/layouts/carousel.php';
+            include '../resources/views/products/products.php';
+        // include __DIR__ . '/../../resources/views/layouts/test.php';
+        // } catch (Exception $e) {
+        //     echo 'Error: ' . $e->getMessage();
+        // }
 
     }
 }

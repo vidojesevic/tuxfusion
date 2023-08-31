@@ -1,33 +1,36 @@
 <?php 
-    use app\controllers\HomeController;
     session_start();
     include '../config/conn.php';
+    // include '../autoload/autoload.php';
+    include '../app/controllers/HomeController.php';
 
     include '../resources/views/layouts/header.php';
-    include '../resources/views/layouts/navbar.php';
 
-    $route = isset($_GET['route']) ? $_GET['route'] : 'home';
+    $page = isset($_GET['page']) ? $_GET['page'] : 'home';
 
-    switch ($route) {
-        case 'home':
-            // include '../resources/views/layouts/carousel.php';
-            // include '../resources/views/products/products.php';
-            $home = new HomeController;
-            $home->index();
-            break;
+    switch ($page) {
+        case 'signin':
+            include '../resources/views/layouts/navbar.php';
+            include '../resources/views/pages/login.php';
+            break;   
         case 'product':
+            include '../resources/views/layouts/navbar.php';
             include '../resources/views/products/singleproduct.php';
             break;
         case 'cart':
-            include '../resources/views/layouts/cart.php';
+            include '../resources/views/layouts/navbar.php';
+            include '../resources/views/pages/login.php';
             break;
         default:
-        http_response_code(404);
-        include '../resources/views/layouts/404.php';
+            $home = new \App\Controllers\HomeController();
+            $home->index();
+            include '../resources/views/layouts/about.php';
+            break;
+        // http_response_code(404);
+        // include '../resources/views/layouts/404.php';
     }
 
 
-    include '../resources/views/layouts/about.php';
     include '../resources/views/layouts/footer.php';
 
 ?>
