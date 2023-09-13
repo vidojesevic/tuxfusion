@@ -1,9 +1,9 @@
 <?php
 
-// namespace App\Utilities;
-include "../../config/conn.php";
+namespace Tuxfusion\App\Utilities;
+require_once "../../config/conn.php";
 
-class UserRegistration extends DBh {
+class UserRegistrationUtility extends DBh {
 
     protected function setUser($user, $email, $pass) : void
     {

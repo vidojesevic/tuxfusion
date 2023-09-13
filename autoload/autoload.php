@@ -1,14 +1,20 @@
 <?php
-    spl_autoload_register('autoloader');
+spl_autoload_register('autoloader');
 
-    function autoloader($class) {
-        $path = '../app/controllers/';
-        $extension = '.php';    
-        $fullPath = $path . $class . $extension;
+function autoloader($class) {
+    $class = str_replace("\\", "/", $class);
+    $directory = [
+        '../app/controllers/',
+        '../app/models/',
+        '../app/utilities/'
+    ];
+    $extension = '.php';    
 
-        if (!file_exists($fullPath)) {
-            return false;
+    foreach ($directory as $dir) {
+        $fullPath = __DIR__ . $dir . $class . $extension;
+        if (file_exists($fullPath)) {
+            include_once $fullPath;
         }
-
-        include_once $fullPath;
     }
+}
+?>

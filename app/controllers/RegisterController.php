@@ -1,8 +1,12 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace App\Controllers;
 
-class RegisterController extends \App\Utilities\UserRegistration {
+use App\Utilities\UserRegistrationUtility as UserRegistrationUtility;
+
+class RegisterController extends UserRegistrationUtility {
 
     private $user;
     private $email;
@@ -15,7 +19,7 @@ class RegisterController extends \App\Utilities\UserRegistration {
     * @param string $user
     * @param string $email
     * @param string $pass
-    * @return string $passConf.
+    * @param string $passConf.
     */
 
     public function __construct($user, $email, $pass, $passConf) { 
@@ -99,7 +103,7 @@ class RegisterController extends \App\Utilities\UserRegistration {
     private function usernameTakedCheck() : bool 
     {
         $result = null;
-        if (!$this->checkUser($this->user, $this->email)) {
+        if (!checkUser($this->user, $this->email)) {
             $result = false;
         } else {
             $result = true;

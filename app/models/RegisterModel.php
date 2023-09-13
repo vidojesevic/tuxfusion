@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Models;
+use App\Controllers\RegisterController;
 
 if (isset($_POST['btnRegister'])) {
 
@@ -10,17 +11,12 @@ if (isset($_POST['btnRegister'])) {
     $pass = $_POST['inPass'];
     $passC = $_POST['inPassConf'];
 
-    // echo $uid;
-    // echo $mail;
-    // echo $pass;
-    // echo $passC;
-
     // Instantiate SingupController
     include "../config/conn.php";
     include "../app/utilities/UserRegistationUtility.php";
     include "../app/controllers/RegisterController.php";
 
-    $register = new \App\Controllers\RegisterController($uid, $email, $pass, $passC);
+    $register = new RegisterController($uid, $email, $pass, $passC);
     
     // Running Error Handlers
     $register->registerUser();
