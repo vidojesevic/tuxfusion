@@ -1,8 +1,8 @@
 <?php 
-include '../autoload/autoload.php';
 session_start();
+include '../autoload/autoload.php';
 require_once '../config/conn.php';
-use App\Controllers\HomeController as HomeController;
+use app\controllers\HomeController as HomeController;
 
 include '../resources/views/layouts/header.php';
 
