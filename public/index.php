@@ -13,9 +13,16 @@
             include '../resources/views/layouts/navbar.php';
             include '../resources/views/pages/login.php';
             break;   
+        case 'register':
+            include '../resources/views/layouts/navbar.php';
+            include '../resources/views/pages/register.php';
+            break;   
         case 'product':
             include '../resources/views/layouts/navbar.php';
             include '../resources/views/products/singleproduct.php';
+            break;
+        case 'admin':
+            include '../resources/views/pages/admin.php';
             break;
         case 'cart':
             include '../resources/views/layouts/navbar.php';

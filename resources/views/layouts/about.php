@@ -2,9 +2,9 @@
 <div id="about" class="bg-secondary text-light">
     <br/><br/>
     <br/>
-    <div class="container">
+    <div class="container container-fluid">
         <div class="row">
-            <div class="col-6">
+            <div class="col-md-6">
                 <h2>About us</h2><br/>
                 <p>TuxFusion Technologies is a leading tech company that 
                     specializes in offering a diverse range of high-quality 
@@ -17,13 +17,13 @@
                     open-source initiatives and fostering a vibrant Linux community.
                 </p>
             </div>
-            <div class="col-6">
+            <div class="col-md-6">
                 <img src="images/devs.png" alt="developers" class="img-fluid rounded">
             </div>
         </div>
         <br/><br/>
         <div class="row">
-            <div class="col-12">
+            <div class="col-md-12">
                 <h3>Celebrate Innovation with SmarTux OS: Where Cutting-Edge Meets Aesthetic Brilliance!</h3>
                 <br/>
                 <p class="text-light">

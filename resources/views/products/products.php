@@ -1,10 +1,10 @@
-<div class="container" id="products">
+<div class="container container-fluid" id="products">
     <br/><br/>
     <br/><br/>
     <h1 class="text-center">Empowering Your Digital World with <span class="text-success">SmartTux OS</span></h1>
     <br/><br/>
     <div class="row">
-        <div id="categories" class="col-3 text-dark">
+        <div id="categories" class="col-md-3 text-dark">
             <ul class="list-group sticky-top sticky-group">
                 <br/>
                 <h3 class="list-group-item">Categories</h3>
@@ -25,10 +25,10 @@
                 </li>
             </ul>
         </div>
-        <div class="container col-9">
+        <div class="container col-md-9">
             <br/>
             <div class="row">
-                <div class="card col-sm mx-1">
+                <div class="card col-sm mx-3">
                     <img class="card-img-top pt-3" src="images/desktop.png" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
@@ -37,7 +37,7 @@
                     </div>
                 </div>
                 <br/>
-                <div class="card col-sm mx-1">
+                <div class="card col-sm mx-3">
                     <img class="card-img-top pt-3" src="images/laptop.png" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
@@ -46,7 +46,7 @@
                     </div>
                 </div>
                 <br/>
-                <div class="card col-sm mx-1">
+                <div class="card col-sm mx-3">
                     <img class="card-img-top pt-3" src="images/mini.png" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>

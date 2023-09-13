@@ -1,7 +1,6 @@
-// $(document).ready(function() {
-//     slideShow();
-//     alert("3. What we neet for coding interviews");
-// });
+$(document).ready(function() {
+    // alert("OOP login system!");
+});
 //
 // function slideShow() {
 //     const current = $('#carousel-inner active');
@@ -11,5 +10,5 @@
 //     next.addClass('active');
 //     setTimeout(slideShow, 150);
 // }
-    alert("3. What we neet for coding interviews");
+    // alert("3. What we neet for coding interviews");
 

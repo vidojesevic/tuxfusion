@@ -1,5 +1,6 @@
 <?php
     session_start();
+    
     if (isset($_POST['btnLogin'])) {
         include '../../config/conn.php';
         include 'functions.php';

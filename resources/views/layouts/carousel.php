@@ -1,4 +1,4 @@
-<div id="carousel" class="carousel slide vh-50" data-bs-ride="carousel">
+<div id="carousel" class="carousel slide" data-bs-ride="carousel">
     <ul class="carousel-indicators">
         <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
         <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
