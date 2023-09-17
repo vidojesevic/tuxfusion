@@ -1,12 +1,10 @@
 <?php
-
 /**
 /* Autoloader
 /*
 /* @param string $class - String name for the class that is trying to be load  
 /* @return void
 */
-
 function autoloader($class) {
     $class = str_replace('\\', '/', $class);
     $directory = '/../';

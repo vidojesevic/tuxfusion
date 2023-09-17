@@ -1,6 +1,6 @@
 <?php
 namespace app\controllers;
-include '../../config/conn.php';
+// DB::getInstance();
 
 class HomeController {
 

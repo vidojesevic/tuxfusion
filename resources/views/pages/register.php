@@ -1,3 +1,12 @@
+<?php
+use app\utilities\config\DB;
+$db = DB::getInstance();
+// if ($db->query("SELECT * FROM user;")) {
+//     echo "Success";
+// } else {
+//     echo "Nothing";
+// }
+?>
 <section class="registration">
     <br/>
     <br/>
@@ -8,14 +17,14 @@
                     class="img-fluid" alt="Sample image">
             </div>
             <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-                <form method="post" action="../../../app/models/RegisterModel.php">
+                <form method="post" action="">
                     <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
                         <p class="lead fw-normal mb-4 me-3">Not registered yet? Sign up here!</p>
                     </div>
 
                     <!-- username -->
                     <div class="form-outline mb-1">
-                        <input type="text" id="inUsername" name="uid" class="form-control form-control-lg"
+                        <input type="text" id="inUsername" name="username" class="form-control form-control-lg"
                             placeholder="Enter username" />
                         <label class="form-label" for="inUsername">Email address</label>
                     </div>

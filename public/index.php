@@ -1,12 +1,12 @@
 <?php 
-session_start();
-include '../autoload/autoload.php';
-require_once '../config/conn.php';
-use app\controllers\HomeController as HomeController;
+require_once '../config/config.php';
+require_once '../autoload/autoload.php';
+error_reporting(E_ALL);
+use app\utilities\config\DB;
 
 include '../resources/views/layouts/header.php';
 
-$page = isset($_GET['page']) ? $_GET['page'] : 'home';
+$page = isset($_GET['page']) ? $_GET['page'] : '';
 
 switch ($page) {
     case 'signin':
@@ -29,8 +29,8 @@ switch ($page) {
         include '../resources/views/pages/login.php';
         break;
     default:
-    $home = new HomeController();
-    $home->index();
+    // $home = new HomeController();
+    // $home->index();
     include '../resources/views/layouts/about.php';
     break;
     // http_response_code(404);
