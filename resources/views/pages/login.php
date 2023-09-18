@@ -31,14 +31,14 @@
 
                     <!-- Email input -->
                     <div class="form-outline mb-3">
-                        <input type="email" id="inEmail" name="inEmail" class="form-control form-control-lg"
+                        <input type="email" id="inEmail" name="inEmail" class="form-control"
                             placeholder="Enter a valid email or username" />
                         <label class="form-label" for="inEmail">Email address</label>
                     </div>
 
                     <!-- Password input -->
                     <div class="form-outline mb-4">
-                        <input type="password" id="inPass" name="inPass" class="form-control form-control-lg"
+                        <input type="password" id="inPass" name="inPass" class="form-control"
                             placeholder="Enter password" />
                         <label class="form-label" for="inPass">Password</label>
                     </div>
@@ -55,7 +55,7 @@
                     </div>
 
                     <div class="text-center text-lg-start mt-4 pt-2">
-                        <input type="submit" class="btn btn-success btn-lg btn-block" name="btnLogin" value="Sign in" id="btnLogin" />
+                        <input type="submit" class="btn btn-success btn-block" name="btnLogin" value="Sign in" id="btnLogin" />
                         <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? 
                             <a href="index.php?page=register" class="link-success">Register</a>
                         </p>

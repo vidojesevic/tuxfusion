@@ -3,6 +3,7 @@ require_once '../config/config.php';
 require_once '../autoload/autoload.php';
 // error_reporting(E_ALL);
 use app\controllers\HomeController;
+use app\controllers\ValidateController;
 use app\utilities\config\DB;
 
 include '../resources/views/layouts/header.php';
@@ -17,7 +18,10 @@ switch ($page) {
         break;   
     case 'register':
         include '../resources/views/layouts/navbar.php';
-        include '../resources/views/pages/register.php';
+        // include '../resources/views/pages/register.php';
+        $validate = new ValidateController();
+        $validation = $validate->processRegistration();
+        $validate->showRegistration();
         break;   
     case 'product':
         include '../resources/views/layouts/navbar.php';

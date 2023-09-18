@@ -19,8 +19,14 @@ $GLOBALS['config'] = [
         'password'  => $_ENV['DB_PASSWORD'],
         'db'        => $_ENV['DB_DATABASE']
     ],
-    'remember' => [],
-    'sessions' => []
+    'remember' => [
+        'cookie'      => 'hash',
+        'cookie_name' => 604800
+    ],
+    'session' => [
+        'session_name' => 'user',
+        'token_name'   => 'token'
+    ]
 ];
 
 require_once('../app/utilities/sanitize.php');

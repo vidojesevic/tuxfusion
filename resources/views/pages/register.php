@@ -1,44 +1,5 @@
 <?php
-use app\utilities\Input;
-use app\utilities\Validate;
-
-if(Input::exists('post')) {
-    $validate = new Validate();
-    $validation = $validate->check($_POST, array(
-        'username' => array(
-            'required'  => true,
-            'min'       => 4,
-            'max'       => 35,
-            'unique'    => 'user'
-        ),
-        'name' => array(
-            'required'  => true,
-            'min'       => 4,
-            'max'       => 30,
-        ),
-        'email' => array(
-            'required'  => true,
-            'min'       => 4,
-            'max'       => 35,
-        ),
-        'password' => array(
-            'required'  => true,
-            'min'       => 6
-        ),
-        'password_repeat' => array(
-            'required'  => true,
-            'matches'   => 'password'
-        )
-    ));
-
-    if ($validation->passed()) {
-        echo "<p class='text-center text-success'>Passed</p>";
-    } else {
-        foreach ($validation->errors() as $error) {
-            echo "<p class='text-center'>".$error . "</p>";
-        }
-    }
-}
+use app\utilities\Token;
 ?>
 <section class="registration">
     <br/>
@@ -83,13 +44,14 @@ if(Input::exists('post')) {
                     </div>
 
                     <!-- Confirm password -->
-                    <div class="form-outline mb-3">
+                    <div class="form-outline mb-4">
                         <label class="form-label input" for="inPassConf">Confirm Password</label>
                         <input type="password" id="inPassConf" name="password_repeat" class="form-control form-control-md"
                             placeholder="Confirm password" />
                     </div>
 
                     <div class="text-center text-lg-start mb-2 pb-2">
+                        <input type="hidden" name="token" value="<?php echo Token::generate(); ?>">
                         <input type="submit" class="btn btn-success btn-md btn-block" name="btnRegister" value="Sign up" id="btnRegister" />
                     </div>
 
