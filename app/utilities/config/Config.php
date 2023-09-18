@@ -1,9 +1,18 @@
 <?php
+declare(strict_types=1);
+
 namespace app\utilities\config;
 
 class Config 
 {
-    public static function get($path = null) 
+    /**
+    * get method
+    *
+    * @param string $path - String path to value of Config credential in array
+    * 
+    * @return string
+    */
+    public static function get($path = null): string
     {
         if ($path) {
             $config = $GLOBALS['config'];

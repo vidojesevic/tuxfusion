@@ -1,8 +1,11 @@
 <?php
+declare(strict_types=1);
+
 namespace app\utilities\config;
 use PDO;
 
-class DB {
+class DB 
+{
     private static $instance = null;
     private $pdo;
     private $error = false;

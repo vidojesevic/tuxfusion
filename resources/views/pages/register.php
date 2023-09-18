@@ -1,24 +1,41 @@
 <?php
-use app\utilities\config\DB;
-$db = DB::getInstance();
-// $db->get("user", array("id_user", "=", 1));
-// $db->insert("user", array(
-//     'username' => 'vidojara',
-//     'password' => 'password',
-//     'email'    => 'vidojarasoni@gmail.com',
-//     'id_role'  => 1,
-//     'name'     => 'Vidoje Sevic',
-//     'salt'     => 'so i tekila'
-// ));
-$db->update("user", 3, ['email' => 'vidojeseviczgb@gmail.com']);
-// if (!$db->error()) {
-//     echo "<p class='text-center'>Results are <br/>";
-//     print_r($db->results());
-//     echo "</p>";;
-// } else {
-//     echo "Nothing";
-// }
-// ?>
+use app\utilities\Input;
+use app\utilities\Validate;
+
+if(Input::exists('post')) {
+    $validate = new Validate();
+    $validation = $validate->check($_POST, array(
+        'username' => array(
+            'required'  => true,
+            'min'       => 4,
+            'max'       => 35,
+            'unique'    => 'user'
+        ),
+        'name' => array(
+            'required'  => true,
+            'min'       => 4,
+            'max'       => 30,
+        ),
+        'email' => array(
+            'required'  => true,
+            'min'       => 4,
+            'max'       => 35,
+        ),
+        'password' => array(
+            'required'  => true,
+            'min'       => 6
+        ),
+        'password_repeat' => array(
+            'required'  => true,
+            'matches'   => 'password'
+        )
+    ));
+} else {
+    echo "<p class='text-center fw-bold'>No input</p>";
+}
+
+
+?>
 <section class="registration">
     <br/>
     <br/>
@@ -57,14 +74,14 @@ $db->update("user", 3, ['email' => 'vidojeseviczgb@gmail.com']);
                     <!-- Password input -->
                     <div class="form-outline mb-2">
                         <label class="form-label input" for="inPass">Password</label>
-                        <input type="password" id="inPass" name="pass" class="form-control form-control-md"
+                        <input type="password" id="inPass" name="password" class="form-control form-control-md"
                             placeholder="Enter password" />
                     </div>
 
                     <!-- Confirm password -->
                     <div class="form-outline mb-3">
                         <label class="form-label input" for="inPassConf">Confirm Password</label>
-                        <input type="password" id="inPassConf" name="pass_repeat" class="form-control form-control-md"
+                        <input type="password" id="inPassConf" name="password_repeat" class="form-control form-control-md"
                             placeholder="Confirm password" />
                     </div>
 
