@@ -1,12 +1,24 @@
 <?php
 use app\utilities\config\DB;
 $db = DB::getInstance();
-// if ($db->query("SELECT * FROM user;")) {
-//     echo "Success";
+// $db->get("user", array("id_user", "=", 1));
+// $db->insert("user", array(
+//     'username' => 'vidojara',
+//     'password' => 'password',
+//     'email'    => 'vidojarasoni@gmail.com',
+//     'id_role'  => 1,
+//     'name'     => 'Vidoje Sevic',
+//     'salt'     => 'so i tekila'
+// ));
+$db->update("user", 3, ['email' => 'vidojeseviczgb@gmail.com']);
+// if (!$db->error()) {
+//     echo "<p class='text-center'>Results are <br/>";
+//     print_r($db->results());
+//     echo "</p>";;
 // } else {
 //     echo "Nothing";
 // }
-?>
+// ?>
 <section class="registration">
     <br/>
     <br/>
@@ -23,39 +35,41 @@ $db = DB::getInstance();
                     </div>
 
                     <!-- username -->
-                    <div class="form-outline mb-1">
-                        <input type="text" id="inUsername" name="username" class="form-control form-control-lg"
+                    <div class="form-outline mb-2">
+                        <label class="form-label input" for="inUsername">Username</label>
+                        <input type="text" id="inUsername" name="username" class="form-control form-control-md"
                             placeholder="Enter username" />
-                        <label class="form-label" for="inUsername">Email address</label>
+                    </div>
+
+                    <div class="form-outline mb-2">
+                        <label class="form-label input" for="name">Full name</label>
+                        <input type="text" id="name" name="name" class="form-control form-control-md"
+                            placeholder="Enter your full name" />
                     </div>
 
                     <!-- Email input -->
-                    <div class="form-outline mb-1">
-                        <input type="email" id="inEmail" name="inEmail" class="form-control form-control-lg"
+                    <div class="form-outline mb-2">
+                        <label class="form-label input" for="email">Email address</label>
+                        <input type="email" id="email" name="email" class="form-control form-control-md"
                             placeholder="Enter a valid email or username" />
-                        <label class="form-label" for="inEmail">Email address</label>
                     </div>
 
                     <!-- Password input -->
-                    <div class="form-outline mb-1">
-                        <input type="password" id="inPass" name="inPass" class="form-control form-control-lg"
+                    <div class="form-outline mb-2">
+                        <label class="form-label input" for="inPass">Password</label>
+                        <input type="password" id="inPass" name="pass" class="form-control form-control-md"
                             placeholder="Enter password" />
-                        <label class="form-label" for="inPass">Password</label>
                     </div>
 
                     <!-- Confirm password -->
                     <div class="form-outline mb-3">
-                        <input type="password" id="inPassConf" name="inPassConf" class="form-control form-control-lg"
+                        <label class="form-label input" for="inPassConf">Confirm Password</label>
+                        <input type="password" id="inPassConf" name="pass_repeat" class="form-control form-control-md"
                             placeholder="Confirm password" />
-                        <label class="form-label" for="inPassConf">Confirm Password</label>
-                    </div>
-
-                    <div class="d-flex justify-content-between align-items-center">
-                        <!-- Checkbox -->
                     </div>
 
                     <div class="text-center text-lg-start mb-2 pb-2">
-                        <input type="submit" class="btn btn-success btn-lg btn-block" name="btnRegister" value="Sign up" id="btnRegister" />
+                        <input type="submit" class="btn btn-success btn-md btn-block" name="btnRegister" value="Sign up" id="btnRegister" />
                     </div>
 
                 </form>

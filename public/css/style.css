@@ -10,6 +10,9 @@ a {
 a:hover {
     opacity: .7;
 }
+.input {
+    height: 1em;
+}
 .sticky-group {
     top: 4.5em;
     z-index: -1;
