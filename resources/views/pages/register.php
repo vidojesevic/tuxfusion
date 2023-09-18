@@ -30,11 +30,15 @@ if(Input::exists('post')) {
             'matches'   => 'password'
         )
     ));
-} else {
-    echo "<p class='text-center fw-bold'>No input</p>";
+
+    if ($validation->passed()) {
+        echo "<p class='text-center text-success'>Passed</p>";
+    } else {
+        foreach ($validation->errors() as $error) {
+            echo "<p class='text-center'>".$error . "</p>";
+        }
+    }
 }
-
-
 ?>
 <section class="registration">
     <br/>
