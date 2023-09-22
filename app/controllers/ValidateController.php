@@ -81,7 +81,7 @@ class ValidateController
                 $validate = new Validate();
                 $validation = $validate->check($_POST, array(
                     'username' => array('required' => true),
-                    'password' => array('required' => true),
+                    'password' => array('required' => true)
                 ));
 
                 if ($validation->passed()) {

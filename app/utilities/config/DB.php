@@ -199,7 +199,7 @@ class DB
         return $this->results;
     }
 
-    public function first(): array
+    public function first()
     {
         return $this->results()[0];
     }

@@ -24,7 +24,7 @@ class Config
                 }
             }
 
-            return $config;
+            return strval($config);
         }
 
         return false;

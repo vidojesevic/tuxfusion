@@ -80,7 +80,8 @@ class UserModel
                                 'hash'    => $hash
                             ));
                         } else {
-                            $hash = $hashCheck->first()['hash'];
+                            $hashRes = $hashCheck->first();
+                            $hash = $hashRes->hash;
                         }
 
                         Cookie::put($this->cookieName, $hash, Config::get('remember/cookie_expiry'));
