@@ -76,7 +76,7 @@ class ValidateController
 
     public function processLogin(): void
     {
-        if (Input::exists('post')) {
+        if (Input::exists()) {
             if (Token::check(Input::get('token'))) {
                 $validate = new Validate();
                 $validation = $validate->check($_POST, array(
@@ -88,7 +88,9 @@ class ValidateController
                     try {
                         $user = new UserModel();
 
-                        $login = $user->login(Input::get('username'), Input::get('password'), Input::get('remember'));
+                        $remember = (Input::get('remember') === 'on') ? true : false;
+                        echo $remember;
+                        $login = $user->login(Input::get('username'), Input::get('password'), $remember);
 
                         if ($login) {
                             Redirect::to('index.php');
@@ -97,10 +99,8 @@ class ValidateController
                         }
                     }
                     catch (Exception $e) {
-                        echo "Error: " . $e->getMessage();
+                        echo "<p class='text-center'>Error: " . $e->getMessage() . "</p>";
                     }
-                
-                    echo Input::get('token');
                 } else {
                     foreach ($validate->errors() as $error) {
                         echo "<p class='text-center text-danger'>".$error."</p>";

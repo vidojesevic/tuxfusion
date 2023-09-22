@@ -9,12 +9,11 @@ use Exception;
 
 class UserModel
 {
-    // loggin and registration
     private $db;
     private $data;
     private $sessionName;
     private $cookieName;
-    private $isLoggedIn;
+    private $isLoggedIn = false;
 
     public function __construct($user = null) {
         $this->db = DB::getInstance();
@@ -33,7 +32,6 @@ class UserModel
                 }
             }
         } else {
-            // $this->find($user);
             $this->find($user);
         }
     }
@@ -59,12 +57,12 @@ class UserModel
         return false;
     }
 
-    public function login($username = null, $password  = null, $remember = false): bool
+    public function login($username, $password, $remember = false): bool
     {
         if (!$username && !$password && $this->exists()) {
             Session::put($this->sessionName, $this->data()->id);
         } else {
-            $user = $this->find($username);
+            echo $user = $this->find($username);
 
             if ($user) {
                 if ($this->data()->password === Hash::make($password, $this->data()->salt)) {
@@ -80,8 +78,7 @@ class UserModel
                                 'hash'    => $hash
                             ));
                         } else {
-                            $hashRes = $hashCheck->first();
-                            $hash = $hashRes->hash;
+                            $hash = $hashCheck->first()->hash;
                         }
 
                         Cookie::put($this->cookieName, $hash, Config::get('remember/cookie_expiry'));
@@ -106,7 +103,7 @@ class UserModel
         return (!empty($this->data())) ? true : false;
     }
 
-    public function isLoggedIn(): bool
+    public function isLoggedIn()
     {
         return $this->isLoggedIn;
     }
