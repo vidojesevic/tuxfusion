@@ -12,7 +12,8 @@ class Redirect
     *
     * @return void
     */  
-    public static function to($location) {
+    public static function to($location): void
+    {
         if ($location) {
             if (is_numeric($location)) {
                 switch ($location) {

@@ -1,4 +1,4 @@
-<section class="vh-65">
+<section class="vh-70">
     <br/>
     <br/>
     <br/>
@@ -15,37 +15,28 @@
                         <button type="button" class="btn btn-success btn-floating mx-1">
                             <i class="fab fa-google"></i>
                         </button>
-
                         <button type="button" class="btn btn-success btn-floating mx-1">
                             <i class="fab fa-github"></i>
                         </button>
-
                         <button type="button" class="btn btn-success btn-floating mx-1">
                             <i class="fab fa-linkedin-in"></i>
                         </button>
                     </div>
-
                     <div class="divider d-flex align-items-center my-4">
                         <p class="text-center fw-bold mx-3 mb-0">Or</p>
                     </div>
-
-                    <!-- Email input -->
                     <div class="form-outline mb-3">
+                        <label class="form-label" for="inEmail">Email address</label>
                         <input type="email" id="inEmail" name="inEmail" class="form-control"
                             placeholder="Enter a valid email or username" />
-                        <label class="form-label" for="inEmail">Email address</label>
                     </div>
-
-                    <!-- Password input -->
                     <div class="form-outline mb-4">
+                        <label class="form-label" for="inPass">Password</label>
                         <input type="password" id="inPass" name="inPass" class="form-control"
                             placeholder="Enter password" />
-                        <label class="form-label" for="inPass">Password</label>
                     </div>
-
                     <div class="d-flex justify-content-between align-items-center">
-                        <!-- Checkbox -->
-                        <div class="form-check mb-1">
+                        <div class="form-check mb-5">
                             <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" />
                             <label class="form-check-label" for="form2Example3">
                                 Remember me
@@ -53,8 +44,7 @@
                         </div>
                         <a href="#!" class="text-body">Forgot password?</a>
                     </div>
-
-                    <div class="text-center text-lg-start mt-4 pt-2">
+                    <div class="text-center text-lg-start mt-1 pt-2">
                         <input type="submit" class="btn btn-success btn-block" name="btnLogin" value="Sign in" id="btnLogin" />
                         <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? 
                             <a href="index.php?page=register" class="link-success">Register</a>
