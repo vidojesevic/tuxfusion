@@ -1,3 +1,6 @@
+<?php
+use app\utilities\Token;
+?>
 <section class="vh-70">
     <br/>
     <br/>
@@ -9,7 +12,7 @@
                     class="img-fluid" alt="Sample image">
             </div>
             <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-                <form method="post" action="../../../app/models/LoginModel.php">
+                <form method="post" action="">
                     <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
                         <p class="lead fw-normal mb-0 me-3">Sign in with</p>
                         <button type="button" class="btn btn-success btn-floating mx-1">
@@ -26,18 +29,18 @@
                         <p class="text-center fw-bold mx-3 mb-0">Or</p>
                     </div>
                     <div class="form-outline mb-3">
-                        <label class="form-label" for="inEmail">Email address</label>
-                        <input type="email" id="inEmail" name="inEmail" class="form-control"
-                            placeholder="Enter a valid email or username" />
+                        <label class="form-label" for="inUser">Username</label>
+                        <input type="text" id="inUser" name="username" class="form-control"
+                            placeholder="Enter your username" />
                     </div>
                     <div class="form-outline mb-4">
                         <label class="form-label" for="inPass">Password</label>
-                        <input type="password" id="inPass" name="inPass" class="form-control"
+                        <input type="password" id="inPass" name="password" class="form-control"
                             placeholder="Enter password" />
                     </div>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div class="form-check mb-5">
-                            <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" />
+                    <div class="d-flex justify-content-between align-items-center mb-5">
+                        <div class="form-check">
+                            <input class="form-check-input me-2" type="checkbox" name="remember" value="" id="form2Example3" />
                             <label class="form-check-label" for="form2Example3">
                                 Remember me
                             </label>
@@ -45,6 +48,7 @@
                         <a href="#!" class="text-body">Forgot password?</a>
                     </div>
                     <div class="text-center text-lg-start mt-1 pt-2">
+                        <input type="hidden" name="token" value="<?php echo Token::generate(); ?>">
                         <input type="submit" class="btn btn-success btn-block" name="btnLogin" value="Sign in" id="btnLogin" />
                         <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? 
                             <a href="index.php?page=register" class="link-success">Register</a>

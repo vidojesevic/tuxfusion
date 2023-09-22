@@ -1,10 +1,9 @@
 <?php 
-error_reporting(E_ALL);
-ini_set('sisplay_errors', 1);
+// error_reporting(E_ALL);
+// ini_set('sisplay_errors', 1);
 require_once '../config/config.php';
 require_once '../autoload/autoload.php';
-use app\controllers\HomeController;
-use app\controllers\ValidateController;
+use app\controllers\{HomeController,ValidateController};
 use app\utilities\config\DB;
 
 include '../resources/views/layouts/header.php';
@@ -15,11 +14,12 @@ $page = isset($_GET['page']) ? $_GET['page'] : '';
 switch ($page) {
     case 'signin':
         include '../resources/views/layouts/navbar.php';
-        include '../resources/views/pages/login.php';
+        $validate = new ValidateController();
+        $validation = $validate->processLogin();
+        $validate->showLogin();
         break;   
     case 'register':
         include '../resources/views/layouts/navbar.php';
-        // include '../resources/views/pages/register.php';
         $validate = new ValidateController();
         $validation = $validate->processRegistration();
         $validate->showRegistration();

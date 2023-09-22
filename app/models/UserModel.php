@@ -3,8 +3,8 @@ declare(strict_types=1);
 
 namespace app\models;
 
-use app\utilities\config\DB;
-use app\utilities\Session;
+use app\utilities\config\{DB,Config};
+use app\utilities\{Session,Hash,Cookie};
 use Exception;
 
 class UserModel
@@ -13,18 +13,28 @@ class UserModel
     private $db;
     private $data;
     private $sessionName;
+    private $cookieName;
+    private $isLoggedIn;
 
     public function __construct($user = null) {
         $this->db = DB::getInstance();
+
+        $this->sessionName = Config::get('session/session_name');
+        $this->cookieName = Config::get('remember/cookie_name');
 
         if (!$user) {
             if (Session::exists($this->sessionName)) {
                 $user = Session::get($this->sessionName);
 
-
+                if ($this->find($user)) {
+                    $this->isLoggedIn = true;
+                } else {
+                    // $this->isLoggedIn = false;
+                }
             }
         } else {
             // $this->find($user);
+            $this->find($user);
         }
     }
 
@@ -49,8 +59,54 @@ class UserModel
         return false;
     }
 
+    public function login($username = null, $password  = null, $remember = false): bool
+    {
+        if (!$username && !$password && $this->exists()) {
+            Session::put($this->sessionName, $this->data()->id);
+        } else {
+            $user = $this->find($username);
+
+            if ($user) {
+                if ($this->data()->password === Hash::make($password, $this->data()->salt)) {
+                    Session::put($this->sessionName, $this->data()->id);
+
+                    if ($remember) {
+                        $hash = Hash::unique();
+                        $hashCheck = $this->db->get('users_session', array('user_id', '=', $this->data()->id));
+
+                        if (!$hashCheck->count()) {
+                            $this->db->insert('users_session', array(
+                                'user_id' => $this->data()->id,
+                                'hash'    => $hash
+                            ));
+                        } else {
+                            $hash = $hashCheck->first()['hash'];
+                        }
+
+                        Cookie::put($this->cookieName, $hash, Config::get('remember/cookie_expiry'));
+                    }
+
+                    return true;
+                } else {
+                    echo "Password doesn't match!";
+                }
+            }
+        }
+        return false;
+    }
+
     public function data()
     {
         return $this->data;
+    }
+
+    public function exists(): bool
+    {
+        return (!empty($this->data())) ? true : false;
+    }
+
+    public function isLoggedIn(): bool
+    {
+        return $this->isLoggedIn;
     }
 }
