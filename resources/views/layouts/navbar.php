@@ -20,8 +20,13 @@
             <li class="nav-item">
                 <a class="nav-link text-light" href="index.php#about">About</a>
             </li>
+            <?php if ($user->data()->id_role === 2) {
+            ?>
+            <li class="nav-item">
+                <a class="nav-link text border border-success rounded" href="index.php?page=admin" tabindex="-1" aria-disabled="true">Admin</a>
+            </li>
             <?php
-            if ($user->data()) {
+            } if ($user->data()) {
             ?>
             <li class="nav-item">
                 <a class="nav-link text" href="index.php?page=cart">Cart</a>
@@ -29,7 +34,7 @@
             <li class="nav-item">
                 <a class="nav-link text border border-success rounded" href="index.php?page=logout" tabindex="-1" aria-disabled="true">Logout</a>
             </li>
-            <?php 
+            <?php
             } else {
             ?>
             <li class="nav-item">

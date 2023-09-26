@@ -28,7 +28,7 @@
         <div class="container col-md-9">
             <br/>
             <div class="row">
-                <div class="card col-sm mx-3">
+                <div class="card col-sm mx-1">
                     <img class="card-img-top pt-3" src="images/desktop.png" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
@@ -37,7 +37,7 @@
                     </div>
                 </div>
                 <br/>
-                <div class="card col-sm mx-3">
+                <div class="card col-sm mx-1">
                     <img class="card-img-top pt-3" src="images/laptop.png" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
@@ -46,7 +46,7 @@
                     </div>
                 </div>
                 <br/>
-                <div class="card col-sm mx-3">
+                <div class="card col-sm mx-1">
                     <img class="card-img-top pt-3" src="images/mini.png" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
