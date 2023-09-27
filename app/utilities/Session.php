@@ -27,7 +27,7 @@ class Session
         }
     } 
 
-    public static function flash($name, $string = ""): Session
+    public static function flash($name, $string = "")
     {
         if (self::exists($name)) {
             $session = self::get($name);

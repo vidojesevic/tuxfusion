@@ -57,20 +57,29 @@ class UserModel
         return false;
     }
 
-    public function login($username, $password, $remember = false): bool
+    /**
+    *  login method
+    *
+    *  @param string $username - String name of username
+    *  @param string $password - String value of username
+    *  @param bool $remember - Bool value of remember
+    *
+    *  return bool
+    */ 
+    public function login($username = null, $password = null, $remember = false): bool
     {
         if (!$username && !$password && $this->exists()) {
             Session::put($this->sessionName, $this->data()->id);
         } else {
-            echo $user = $this->find($username);
+            $user = $this->find($username);
 
             if ($user) {
                 if ($this->data()->password === Hash::make($password, $this->data()->salt)) {
-                    Session::put($this->sessionName, $this->data()->id);
+                    Session::put($this->sessionName, $this->data()->id_user);
 
                     if ($remember) {
                         $hash = Hash::unique();
-                        $hashCheck = $this->db->get('users_session', array('user_id', '=', $this->data()->id));
+                        $hashCheck = $this->db->get('users_session', array('user_id', '=', $this->data()->id_user));
 
                         if (!$hashCheck->count()) {
                             $this->db->insert('users_session', array(
@@ -81,7 +90,7 @@ class UserModel
                             $hash = $hashCheck->first()->hash;
                         }
 
-                        Cookie::put($this->cookieName, $hash, Config::get('remember/cookie_expiry'));
+                        echo Cookie::put($this->cookieName, $hash, Config::get('remember/cookie_expiry'));
                     }
 
                     return true;
@@ -103,8 +112,16 @@ class UserModel
         return (!empty($this->data())) ? true : false;
     }
 
-    public function isLoggedIn()
+    public function isLoggedIn(): bool
     {
         return $this->isLoggedIn;
+    }
+
+    public function logout(): void
+    {
+        $this->db->delete('users_session', array('user_id', '=', $this->data()->id_user));
+
+        Session::delete($this->sessionName);
+        Cookie::delete($this->cookieName);
     }
 }

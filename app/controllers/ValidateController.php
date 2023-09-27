@@ -89,10 +89,11 @@ class ValidateController
                         $user = new UserModel();
 
                         $remember = (Input::get('remember') === 'on') ? true : false;
-                        echo $remember;
-                        $login = $user->login(Input::get('username'), Input::get('password'), $remember);
+                        // echo $remember;
+                        $login = $user->login(Input::get('username'), Input::get('password'), $remember) . "<br/>";
 
                         if ($login) {
+                            // echo "You are logged in";
                             Redirect::to('index.php');
                         } else {
                             echo "<p>Error!</p>";

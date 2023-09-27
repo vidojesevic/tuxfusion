@@ -20,19 +20,20 @@
             <li class="nav-item">
                 <a class="nav-link text-light" href="index.php#about">About</a>
             </li>
-            <?php if ($user->data()->id_role === 2) {
+            <?php 
+            if ($user->data()->id_role === 2) {
             ?>
             <li class="nav-item">
-                <a class="nav-link text border border-success rounded" href="index.php?page=admin" tabindex="-1" aria-disabled="true">Admin</a>
+                <a class="nav-link text-success" href="index.php?page=admin" tabindex="-1" aria-disabled="true">Admin</a>
             </li>
             <?php
-            } if ($user->data()) {
+            } if ($user->isLoggedIn() && $user->data()->id_role === 1) {
             ?>
             <li class="nav-item">
-                <a class="nav-link text" href="index.php?page=cart">Cart</a>
+                <a class="nav-link text-light" href="index.php?page=cart">Cart</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text border border-success rounded" href="index.php?page=logout" tabindex="-1" aria-disabled="true">Logout</a>
+                <a class="nav-link text-success border border-success rounded" href="index.php?page=logout" tabindex="-1" aria-disabled="true">Logout</a>
             </li>
             <?php
             } else {

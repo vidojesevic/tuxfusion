@@ -20,8 +20,8 @@ $GLOBALS['config'] = [
         'db'        => $_ENV['DB_DATABASE']
     ],
     'remember' => [
-        'cookie'      => 'hash',
-        'cookie_name' => 604800
+        'cookie_name'      => 'hash',
+        'cookie_expiry' => 604800
     ],
     'session' => [
         'session_name' => 'user',

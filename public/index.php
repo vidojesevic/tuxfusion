@@ -24,6 +24,9 @@ switch ($page) {
         $validation = $validate->processRegistration();
         $validate->showRegistration();
         break;   
+    case 'logout':
+        include '../app/utilities/Logout.php';
+        break;
     case 'product':
         include '../resources/views/layouts/navbar.php';
         include '../resources/views/products/singleproduct.php';
