@@ -8,25 +8,25 @@
         <div class="carousel-item active">
             <img class="d-block w-100" src="images/laptop.png" alt="Laptop">
             <div class="carousel-caption d-none d-md-block">
-                <h5 class="text-warning">Laptop</h5>
-                <p class="text-warning">Laptop powered by AMD</p>
-                <p><a class="btn btn-warning mt-1" href="?page=product">Learn more</a></p>
+                <h5 class="text-success fw-bolder">Laptop</h5>
+                <p class="text-success fw-bold">Laptop powered by AMD</p>
+                <p><a class="btn btn-success mt-1" href="?page=product">Learn more</a></p>
             </div>
         </div>
         <div class="carousel-item">
             <img class="d-block w-100" src="images/mini.png" alt="mini PC">
             <div class="carousel-caption d-none d-md-block">
-                <h5 class="text-primary">Mini PC</h5>
-                <p class="text-primary">Pini pc nesto</p>
-                <p><a class="btn btn-primary mt-1" href="?page=product">Learn more</a></p>
+                <h5 class="text-success">Mini PC</h5>
+                <p class="text-success">Mini pc nesto</p>
+                <p><a class="btn btn-success mt-1" href="?page=product">Learn more</a></p>
             </div>
         </div>
         <div class="carousel-item">
             <img class="d-block w-100" src="images/desktop.png" alt="decktop PC">
             <div class="carousel-caption d-none d-md-block">
-                <h5 class="text-light">Laptop</h5>
-                <p class="text-light">Powerfull desktop PC</p>
-                <p><a class="btn btn-light mt-1" href="?page=product">Learn more</a></p>
+                <h5 class="text-success">Laptop</h5>
+                <p class="text-success">Powerfull desktop PC</p>
+                <p><a class="btn btn-success mt-1" href="?page=product">Learn more</a></p>
             </div>
         </div>
     </div>

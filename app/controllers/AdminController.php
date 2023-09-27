@@ -8,7 +8,7 @@ use app\models\UserModel;
 class AdminController
 {
     private $admin;
-    private $name;
+    public $name;
 
     public function __construct() {
         $this->admin = new UserModel();

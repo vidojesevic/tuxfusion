@@ -1,4 +1,11 @@
+<?php
+use app\utilities\config\DB;
+$categoryDB = DB::getInstance();
+$category = $categoryDB->query("SELECT * FROM categories;");
+// print_r($category);
+?>
 <div class="container container-fluid" id="products">
+    <br/><br/>
     <br/><br/>
     <br/><br/>
     <h1 class="text-center">Empowering Your Digital World with <span class="text-success">SmartTux OS</span></h1>
@@ -8,21 +15,15 @@
             <ul class="list-group sticky-top sticky-group">
                 <br/>
                 <h3 class="list-group-item">Categories</h3>
-                <li class="list-group-item mt-1 cat">
-                    <a href="?page=laptops.php" class="text-dark">Laptops</a>
-                </li>
-                <li class="list-group-item mt-1 cat">
-                    <a href="#" class="text-dark">Desktop PC</a>
-                </li>
-                <li class="list-group-item mt-1 cat">
-                    <a href="#" class="text-dark">Mini PC</a>
-                </li>
-                <li class="list-group-item mt-1 cat">
-                    <a href="#" class="text-dark">Tablets</a>
-                </li>
-                <li class="list-group-item mt-1 cat">
-                    <a href="#" class="text-dark">Smartphones</a>
-                </li>
+                <?php
+                foreach ($category->results() as $cat) {
+                    echo '<li class="list-group-item mt-1 cat">';
+                    echo '<a href="#" class="text-dark fw-bold">';
+                    echo "<i class='fa-solid {$cat->icon} text-success'></i>";
+                    echo "&nbsp;&nbsp;" . $cat->name;
+                echo '</a></li>';
+                }
+                ?>
             </ul>
         </div>
         <div class="container col-md-9">
@@ -33,7 +34,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Buy</a>
+                        <a href="#" class="btn btn-success">Add to cart</a>
                     </div>
                 </div>
                 <br/>
@@ -42,7 +43,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Buy</a>
+                        <a href="#" class="btn btn-success">Add to cart</a>
                     </div>
                 </div>
                 <br/>
@@ -51,7 +52,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Buy</a>
+                        <a href="#" class="btn btn-success">Add to cart</a>
                     </div>
                 </div>
             </div>
@@ -61,7 +62,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Buy</a>
+                        <a href="#" class="btn btn-success">Add to cart</a>
                     </div>
                 </div>
                 <br/>
@@ -70,7 +71,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Buy</a>
+                        <a href="#" class="btn btn-success">Add to cart</a>
                     </div>
                 </div>
                 <br/>
@@ -79,7 +80,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Buy</a>
+                        <a href="#" class="btn btn-success">Add to cart</a>
                     </div>
                 </div>
             </div>
@@ -89,7 +90,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Buy</a>
+                        <a href="#" class="btn btn-success">Add to cart</a>
                     </div>
                 </div>
                 <br/>
@@ -98,7 +99,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Buy</a>
+                        <a href="#" class="btn btn-success">Add to cart</a>
                     </div>
                 </div>
                 <br/>
@@ -107,7 +108,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Buy</a>
+                        <a href="#" class="btn btn-success">Add to cart</a>
                     </div>
                 </div>
             </div>
@@ -117,7 +118,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Buy</a>
+                        <a href="#" class="btn btn-success">Add to cart</a>
                     </div>
                 </div>
                 <br/>
@@ -126,7 +127,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Buy</a>
+                        <a href="#" class="btn btn-success">Add to cart</a>
                     </div>
                 </div>
                 <br/>
@@ -135,7 +136,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Buy</a>
+                        <a href="#" class="btn btn-success">Add to cart</a>
                     </div>
                 </div>
                 <br/><br/>

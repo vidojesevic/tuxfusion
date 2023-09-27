@@ -13,6 +13,13 @@ a:hover {
 .input {
     height: 1em;
 }
+#carousel {
+    max-height: 90vh;
+}
+.carousel-caption {
+    transform: translateY(-6em);
+    text-shadow: #F8F9FA 3px 1px 10px;
+}
 .sticky-group {
     top: 4.5em;
     z-index: -1;
