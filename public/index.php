@@ -3,7 +3,7 @@
 // ini_set('sisplay_errors', 1);
 require_once '../config/config.php';
 require_once '../autoload/autoload.php';
-use app\controllers\{HomeController,ValidateController};
+use app\controllers\{HomeController,ValidateController,AdminController};
 use app\utilities\config\DB;
 
 include '../resources/views/layouts/header.php';
@@ -26,6 +26,11 @@ switch ($page) {
         break;   
     case 'logout':
         include '../app/utilities/Logout.php';
+        break;
+    case 'admin':
+        include '../resources/views/layouts/navbar.php';
+        $admin = new AdminController();
+        $admin->showAdminPanel();
         break;
     case 'product':
         include '../resources/views/layouts/navbar.php';
