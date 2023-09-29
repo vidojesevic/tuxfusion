@@ -1,8 +1,5 @@
 <?php
-use app\utilities\config\DB;
-$categoryDB = DB::getInstance();
-$category = $categoryDB->query("SELECT * FROM categories;");
-// print_r($category);
+include '../app/utilities/CategoryEndpoint.php';
 ?>
 <div class="container container-fluid" id="products">
     <br/><br/>
@@ -13,17 +10,8 @@ $category = $categoryDB->query("SELECT * FROM categories;");
     <div class="row">
         <div id="categories" class="col-md-3 text-dark">
             <ul class="list-group sticky-top sticky-group">
-                <br/>
-                <h3 class="list-group-item">Categories</h3>
-                <?php
-                foreach ($category->results() as $cat) {
-                    echo '<li class="list-group-item mt-1 category">';
-                    echo '<a href="#" class="text-dark fw-bold">';
-                    echo "<i class='fa-solid {$cat->icon} text-success'></i>";
-                    echo "&nbsp;&nbsp;" . $cat->name;
-                echo '</a></li>';
-                }
-                ?>
+                <!-- <br/> -->
+                <!-- <h3 class="list-group-item">Categories</h3> -->
             </ul>
         </div>
         <div class="container col-md-9">
