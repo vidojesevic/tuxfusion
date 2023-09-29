@@ -17,7 +17,7 @@ $category = $categoryDB->query("SELECT * FROM categories;");
                 <h3 class="list-group-item">Categories</h3>
                 <?php
                 foreach ($category->results() as $cat) {
-                    echo '<li class="list-group-item mt-1 cat">';
+                    echo '<li class="list-group-item mt-1 category">';
                     echo '<a href="#" class="text-dark fw-bold">';
                     echo "<i class='fa-solid {$cat->icon} text-success'></i>";
                     echo "&nbsp;&nbsp;" . $cat->name;

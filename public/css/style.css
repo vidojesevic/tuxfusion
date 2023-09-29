@@ -27,6 +27,14 @@ a:hover {
 li {
     list-style: none;
 }
-.cat:hover {
-    opacity: .5;
+.category:hover {
+    opacity: .8;
+}
+.list-jobs li:hover {
+    opacity: 0.8;
+    background: #212529;
+    color: #ffffff;
+    /* font-size: 1.2em; */
+    font-weight: bolder;
+    cursor: pointer;
 }
