@@ -1,6 +1,6 @@
 <?php 
-// error_reporting(E_ALL);
-// ini_set('sisplay_errors', 1);
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 require_once '../config/config.php';
 require_once '../autoload/autoload.php';
 use app\controllers\{HomeController,ValidateController,AdminController};
@@ -54,9 +54,9 @@ switch ($page) {
         require_once '../resources/views/pages/users.php';
         break;
     case 'cart':
-        include '../resources/views/layouts/navbar.php';
-        include '../resources/views/pages/login.php';
-        include '../resources/views/layouts/footer.php';
+        include 'resources/views/layouts/navbar.php';
+        include 'resources/views/pages/login.php';
+        include 'resources/views/layouts/footer.php';
         break;
     default:
     $home = new HomeController();

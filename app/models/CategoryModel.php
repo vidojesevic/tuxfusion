@@ -1,9 +1,10 @@
 <?php
 declare(strict_types=1);
 
-// namespace app\Models;
+namespace app\models;
 
 use app\utilities\config\DB;
+use Exception;
 
 class CategoryModel
 {
@@ -16,12 +17,12 @@ class CategoryModel
         $this->db = DB::getInstance();
     }
 
-    public function getCategory(): string|bool
+    public function getCategory()
     {
         $this->category = $this->db->query('SELECT * FROM categories;');
 
         if ($this->category->error()) {
-            return false;
+            throw new Exception('Database error: ' . $this->category->error());
         }
 
         $this->results = $this->category->results();
@@ -29,13 +30,3 @@ class CategoryModel
         return $this->results;
     }
 }
-
-// $db = DB::getInstance();
-// $category = $db->query('SELECT * FROM categories');
-// $catArray = array();
-// foreach ($category->results() as $res) {
-//     array_push($catArray, $res);
-// }
-//
-// header('Content-Type: application/json');
-// echo json_encode($catArray);

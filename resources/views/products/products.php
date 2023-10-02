@@ -1,6 +1,3 @@
-<?php
-include '../app/utilities/CategoryEndpoint.php';
-?>
 <div class="container container-fluid" id="products">
     <br/><br/>
     <br/><br/>
@@ -9,10 +6,6 @@ include '../app/utilities/CategoryEndpoint.php';
     <br/><br/>
     <div class="row">
         <div id="categories" class="col-md-3 text-dark">
-            <ul class="list-group sticky-top sticky-group">
-                <!-- <br/> -->
-                <!-- <h3 class="list-group-item">Categories</h3> -->
-            </ul>
         </div>
         <div class="container col-md-9">
             <br/>

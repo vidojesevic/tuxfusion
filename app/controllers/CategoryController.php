@@ -3,7 +3,8 @@ declare(strict_types=1);
 
 namespace app\controllers;
 
-use app\Models\CategoryModel;
+use app\models\CategoryModel;
+use Exception;
 
 class CategoryController
 {
@@ -14,11 +15,15 @@ class CategoryController
         $this->categoryModel = new CategoryModel();
     }
 
-    public function getCategory(): void
+    public function getCategory()
     {
-        $categories = $this->categoryModel->getCategory();
-
-        // header('Content-Type: application/json');
-        return $categories;
+        try {
+            $categories = $this->categoryModel->getCategory();
+            header('Content-Type: application/json');
+            return $categories;
+        } catch (Exception $e) {
+            header('HTTP/1.1 500 Internal Server Error');
+            echo json_encode(['error' => $e->getMessage()]);
+        }
     }
 }

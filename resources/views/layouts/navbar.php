@@ -15,7 +15,7 @@
                 <a class="nav-link active text-light" aria-current="page" href="index.php">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-light" href="index.php#products">Products</a>
+                <a class="nav-link text-light" href="#products">Products</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-light" href="index.php#about">About</a>

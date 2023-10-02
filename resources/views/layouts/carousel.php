@@ -41,3 +41,6 @@
         </a>
     </div>
 </div>
+<?php
+require_once '../app/utilities/endpoints/CategoryEndpoint.php';
+?>

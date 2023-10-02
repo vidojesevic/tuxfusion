@@ -29,21 +29,30 @@ function displayCategory(category) {
 }
 
 function getCategory() {
-    ajaxCallBack('get', '../../app/utilities/CategoryEndpoint.php', 
-        function(result){
-            displayCategory(result);
+    ajaxCallBack('/../app/utilities/endpoints/CategoryEndpoint.php', 
+        function(data){
+            if (!data) {
+                console.log("No data sent!");
+            }
+            console.log(data);
+            displayCategory(data);
         },
-        function(error) {
+        function(error, textStatus, errorThrown) {
+            // console.log(window.location.origin + "/../app/utilities/endpoints/CategoryEndpoint.php");
+            // console.log("There is some error!");
             console.log(error);
+            console.log(textStatus);
+            console.log(errorThrown);
         }
     );
 }
 
-function ajaxCallBack(url, method, successFunction, errorFunction) {
+function ajaxCallBack(url, successFunction, errorFunction) {
     $.ajax({
         url: url,
-        method: method,
-        dataType: "json",
+        method: 'GET',
+        contentType: 'application/json',
+        dataType: 'json',
         success: successFunction,
         error: errorFunction
     });
