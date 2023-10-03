@@ -29,7 +29,7 @@ function displayCategory(category) {
 }
 
 function getCategory() {
-    ajaxCallBack('/../app/utilities/endpoints/CategoryEndpoint.php', 
+    ajaxCallBack('/app/utilities/endpoints/CategoryEndpoint.php',
         function(data){
             if (!data) {
                 console.log("No data sent!");
@@ -38,8 +38,6 @@ function getCategory() {
             displayCategory(data);
         },
         function(error, textStatus, errorThrown) {
-            // console.log(window.location.origin + "/../app/utilities/endpoints/CategoryEndpoint.php");
-            // console.log("There is some error!");
             console.log(error);
             console.log(textStatus);
             console.log(errorThrown);
@@ -50,10 +48,15 @@ function getCategory() {
 function ajaxCallBack(url, successFunction, errorFunction) {
     $.ajax({
         url: url,
-        method: 'GET',
+        type: 'GET',
+        CORS: true,
         contentType: 'application/json',
         dataType: 'json',
         success: successFunction,
-        error: errorFunction
+        error: errorFunction,
+        headers: {
+            "accept": "application/json",
+            'Access-Control-Allow-Origin': '*',
+        },
     });
 }

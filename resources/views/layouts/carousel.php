@@ -10,7 +10,7 @@
             <div class="carousel-caption d-none d-md-block">
                 <h5 class="text-success fw-bolder">Laptop</h5>
                 <p class="text-success fw-bold">Laptop powered by AMD</p>
-                <p><a class="btn btn-success mt-1" href="?page=product">Learn more</a></p>
+                <p><a class="btn btn-success mt-1" href="index.php?page=product">Learn more</a></p>
             </div>
         </div>
         <div class="carousel-item">
@@ -18,7 +18,7 @@
             <div class="carousel-caption d-none d-md-block">
                 <h5 class="text-success">Mini PC</h5>
                 <p class="text-success">Mini pc nesto</p>
-                <p><a class="btn btn-success mt-1" href="?page=product">Learn more</a></p>
+                <p><a class="btn btn-success mt-1" href="index.php?page=product">Learn more</a></p>
             </div>
         </div>
         <div class="carousel-item">
@@ -26,7 +26,7 @@
             <div class="carousel-caption d-none d-md-block">
                 <h5 class="text-success">Laptop</h5>
                 <p class="text-success">Powerfull desktop PC</p>
-                <p><a class="btn btn-success mt-1" href="?page=product">Learn more</a></p>
+                <p><a class="btn btn-success mt-1" href="index.php?page=product">Learn more</a></p>
             </div>
         </div>
     </div>
@@ -41,6 +41,3 @@
         </a>
     </div>
 </div>
-<?php
-require_once '../app/utilities/endpoints/CategoryEndpoint.php';
-?>
