@@ -1,17 +1,17 @@
 <IfModule mod_rewrite.so>
     RewriteEngine On
-    RewriteBase /
+    #RewriteBase /tuxfusion/public
 
-    #prosla konfiguracija
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^(.*)$ index.php [L]
-
-    #RewriteRule ^api/category$ /app/utilities/CategoryEndpoint.php [L]
-    #RewriteRule ^/?app/utilities/endpoints(/.*)?$ %{DOCUMENT_ROOT}/../app/utilities/endpoints$1 [PT,L]
     
     # Allow ajax to access data from back-end
     RewriteCond %{REQUEST_METHOD} ^(GET)$
     RewriteCond %{HTTP:X-Requested-With} !=XMLHttpRequest
-    RewriteRule ^/?scripts/ - [F]
+    #RewriteRule ^endpoints/(.*)$ http://tuxfusiontech.com/endpoints/$1 [R=301,L]
+
+    #prosla konfiguracija
+    #RewriteCond %{REQUEST_FILENAME} !-f
+    #RewriteCond %{REQUEST_FILENAME} !-d
+    #RewriteRule ^(.*)$ index.php [L]
+
+    #RewriteRule ^/?scripts/ - [F]
 </IfModule>

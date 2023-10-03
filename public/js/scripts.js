@@ -1,6 +1,7 @@
 $(document).ready(function() {
     getCategory();
     getJobs();
+    hoverList();
 });
 
 function getJobs() {
@@ -18,8 +19,8 @@ function displayCategory(category) {
     for (const i in category) {
         list += `<li class='list-group-item'>
                     <a href='#' data-id='${category[i].id_categorie}' class='text-dark fw-bold'>
-                        <i class='fa-solid ${category[i].icon}'></i>
-                        ${category[i].name}
+                        <i class='fa-solid ${category[i].icon} text-success'></i>
+                        &nbsp;&nbsp;${category[i].name}
                     </a>
                 </li>`;
     }
@@ -28,16 +29,28 @@ function displayCategory(category) {
     $('#categories').html(list);
 }
 
+function hoverList() {
+    $('.hover-list').hover(
+        function() {
+            $(this).find('li').addClass('black');
+        }, 
+        function() {
+            $(this).find('li').removeClass('black');
+        }
+    );
+}
+
 function getCategory() {
-    ajaxCallBack('/app/utilities/endpoints/CategoryEndpoint.php',
+    // ajaxCallBack('category.php',
+    ajaxCallBack('file.php',
         function(data){
             if (!data) {
                 console.log("No data sent!");
             }
-            console.log(data);
             displayCategory(data);
         },
         function(error, textStatus, errorThrown) {
+            // console.log(window.location);
             console.log(error);
             console.log(textStatus);
             console.log(errorThrown);
@@ -48,9 +61,10 @@ function getCategory() {
 function ajaxCallBack(url, successFunction, errorFunction) {
     $.ajax({
         url: url,
-        type: 'GET',
+        method: 'GET',
         CORS: true,
-        contentType: 'application/json',
+        contentType: false,
+        processData: false,
         dataType: 'json',
         success: successFunction,
         error: errorFunction,
