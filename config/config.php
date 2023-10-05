@@ -29,4 +29,3 @@ $GLOBALS['config'] = [
     ]
 ];
 
-require_once('../app/utilities/sanitize.php');

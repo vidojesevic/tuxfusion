@@ -3,6 +3,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 require_once '../config/config.php';
 require_once '../autoload/autoload.php';
+require_once('../app/utilities/sanitize.php');
 use app\controllers\{HomeController,ValidateController,AdminController};
 use app\utilities\config\DB;
 

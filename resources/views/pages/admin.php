@@ -6,7 +6,7 @@ $admin = new AdminController();
 <section id='amdin'>
     <div class='container'>
         <div class='row d-flex justify-content-between'>
-            <div class='col-4 list-jobs mt-5'>
+            <div class='col-4 hover-list mt-5'>
                 <ul class='list-group'>
                     <h3 class='list-group-item'>Jobs</h3>
                     <li class='list-group-item' data-page='admin/add-product'>

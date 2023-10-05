@@ -6,12 +6,12 @@
     # Allow ajax to access data from back-end
     RewriteCond %{REQUEST_METHOD} ^(GET)$
     RewriteCond %{HTTP:X-Requested-With} !=XMLHttpRequest
-    #RewriteRule ^endpoints/(.*)$ http://tuxfusiontech.com/endpoints/$1 [R=301,L]
+    RewriteRule ^endpoints/(.*)$ http://tuxfusiontech.com/endpoints/$1 [R=301,L]
 
     #prosla konfiguracija
     #RewriteCond %{REQUEST_FILENAME} !-f
     #RewriteCond %{REQUEST_FILENAME} !-d
-    #RewriteRule ^(.*)$ index.php [L]
+    RewriteRule ^(.*)$ index.php [L]
 
     #RewriteRule ^/?scripts/ - [F]
 </IfModule>

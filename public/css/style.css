@@ -10,6 +10,15 @@ a {
 a:hover {
     opacity: .7;
 }
+li {
+    list-style: none;
+}
+.list-group-item li:hover {
+    opacity: 0.9;
+    background: #212529;
+    color: #ffffff;
+    cursor: pointer;
+}
 .input {
     height: 1em;
 }
@@ -24,25 +33,15 @@ a:hover {
     top: 4.5em;
     z-index: -1;
 }
-li {
-    list-style: none;
-}
 .category:hover {
     opacity: .8;
 }
-.hover-list li:hover {
-    opacity: 0.8;
+.black {
+    opacity: 0.9;
     background: #212529;
-    color: #ffffff;
-    /* font-size: 1.2em; */
-    font-weight: bolder;
+    color: #F8F9FA;
     cursor: pointer;
 }
-.black {
-    opacity: .9;
-    background: #212529;
-    color: #ffffff;
-    /* font-size: 1.2em; */
-    font-weight: bolder;
-    cursor: pointer;
+.view:hover {
+    transform: scale(1.04);
 }
