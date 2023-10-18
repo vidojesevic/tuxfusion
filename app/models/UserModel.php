@@ -28,7 +28,7 @@ class UserModel
                 if ($this->find($user)) {
                     $this->isLoggedIn = true;
                 } else {
-                    // $this->isLoggedIn = false;
+                    $this->isLoggedIn = false;
                 }
             }
         } else {
@@ -36,6 +36,13 @@ class UserModel
         }
     }
 
+    /**
+    * create method
+    *
+    * @param array() $field - Array of query parameters
+    *
+    * @return void
+    */
     public function create($field = array()): void
     {
         if (!$this->db->insert('user', $field)) {

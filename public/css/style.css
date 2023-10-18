@@ -36,7 +36,7 @@ li {
 .category:hover {
     opacity: .8;
 }
-.black {
+.hover-list li:hover {
     opacity: 0.9;
     background: #212529;
     color: #F8F9FA;
